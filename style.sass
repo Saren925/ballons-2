@@ -1,0 +1,131 @@
+*, ::after, ::before
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%  
+
+body
+    font-family: 'Roboto'
+    font-weight: 400
+    color: #777777
+    font-size: 1.6rem
+    letter-spacing: .2rem
+    padding: 5rem
+    background-color: #fff
+
+.container
+    background-color: #f7f7f7
+
+.header
+    position: relative
+    height: 95vh
+    background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(1, 1, 1, 0.7) 99.94%), url("https://www.shutterstock.com/image-photo/colorful-parachute-against-clear-sky-600w-28214962.jpg") center / cover no-repeat
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 80%)
+    .header-logo
+        position: absolute
+        top: 5rem
+        left: 5rem
+        font-size: 5rem
+        color: #fff
+    .box
+        position: absolute
+        left: 50%
+        top: 40%
+        transform: translate(-50%, -50%)
+        width: 100%
+        text-align: center
+.title-first
+    color: #fff
+    .title-first-main
+        text-transform: uppercase
+        display: block
+        font-weight: 800
+        font-size: 5rem
+        line-height: 6rem
+        letter-spacing: 1rem
+        margin-bottom: 1rem
+        animation: leftToRight 2s
+        backface-visibility: hidden
+    .title-second-main
+        display: block
+        font-weight: 100
+        font-size: 4rem
+        line-height: 4rem
+        letter-spacing: .5rem
+        animation: rightToLeft 2s
+        backface-visibility: hidden
+@keyframes leftToRight
+    0%
+        opacity: 0
+        transform: translateX(-10rem)
+
+    80%
+        transform: translateX(2rem)
+
+    100%
+        opacity: 1
+        transform: translateX(0rem)
+        margin-bottom: 1rem
+
+.btn
+    &:link, &:visited
+        text-transform: uppercase
+        text-decoration: none
+        padding: 1.5rem 4rem
+        color: #777777
+        background-color: #fff
+        border-radius: 5rem
+        display: inline-block
+        transition: all .2s
+        margin-top: 5rem
+        position: relative
+        font-size: 2rem
+    &:hover
+        transform: translateY(-0.4rem)
+        box-shadow: (0px .4rem .4rem rgba(0, 0, 0, 0.3))
+        &::after
+            opacity: 0
+            transform: scaleX(1.5) scaleY(1.7)
+    &:active
+        transform: translateY(-0.2rem)
+    &::after
+        content: ""
+        background: #fff
+        width: 100%
+        height: 100%
+        border-radius: 5rem
+        display: inline-block
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -1
+        transition: all .6s
+    &_animated
+        animation: bottomToTop 2s
+        backface-visibility: hidden
+
+@keyframes rightToLeft
+    0%
+        opacity: 0
+        transform: translateX(10rem)
+
+    80%
+        transform: translateX(-2rem)
+
+    100%
+        opacity: 1
+        transform: translateX(0px)
+
+@keyframes bottomToTop 
+    0%
+        opacity: 0
+        transform: translateY(5rem)
+
+    80%
+        transform: translateY(-2rem)
+
+    100%
+        opacity: 1
+        transform: translateX(0px)
